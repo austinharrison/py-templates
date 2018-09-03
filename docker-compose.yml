@@ -1,0 +1,7 @@
+version: '2'
+services:
+  py_templates:
+    build: .
+    # tty: true
+    volumes:
+      - ./:/usr/src/app/

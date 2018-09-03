@@ -1,0 +1,20 @@
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# virtualenv
+.venv
+venv/
+ENV/
+
+# pycharm
+.idea/
+
+# other
+creds/*
+logs/*
+logs/*
+*.db
+data/*
+results/*
+archive/

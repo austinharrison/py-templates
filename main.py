@@ -29,6 +29,7 @@ if not os.path.isfile('./creds/creds.yml'):
     os.makedirs('./creds/', exist_ok=True)
     with open('./creds/creds.yml', 'w') as f:
         f.write("example:\n  username: username\n  password: password\n")
+    logger.info('Created example creds.yml file')
 
 with open('./creds/creds.yml') as f:
     CREDS = yaml.safe_load(f)

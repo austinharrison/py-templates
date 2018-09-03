@@ -41,3 +41,7 @@ example:
   username: username
   password: password
 ```
+
+## TODO
++ Put setup process somewhere else besides `main.py`
++ Have `logging` get config from a file

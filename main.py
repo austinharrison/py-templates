@@ -1,9 +1,12 @@
 import logging
 import yaml
+import os
 
 # create logger
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
+# create logs folder if it doesn't exist
+os.makedirs('./logs/', exist_ok=True)
 # create file handler which logs even debug messages
 fh = logging.FileHandler('./logs/logs.log')
 fh.setLevel(logging.DEBUG)
@@ -20,18 +23,21 @@ logger.addHandler(ch)
 
 logger.info('Logging started')
 
-# ./creds/creds.yml example
-'''
-example:
-  username: username
-  password: password
-'''
+# create example creds.yml if one doesn't exist
+if not os.path.isfile('./creds/creds.yml'):
+    # create creds dirs
+    os.makedirs('./creds/', exist_ok=True)
+    with open('./creds/creds.yml', 'w') as f:
+        f.write(
+            '''
+            example:
+              username: username
+              password: password
+            '''
+        )
 
 with open('./creds/creds.yml') as f:
     CREDS = yaml.safe_load(f)
-
-
-
 
 
 def main():

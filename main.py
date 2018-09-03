@@ -2,7 +2,7 @@ import logging
 import yaml
 
 # create logger
-logger = logging.getLogger('__name__')
+logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 # create file handler which logs even debug messages
 fh = logging.FileHandler('./logs/logs.log')
